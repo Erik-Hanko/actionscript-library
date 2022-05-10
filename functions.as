@@ -50,3 +50,5 @@ function random_card()
 
     return korttype[random(0,3)] +" "+ kortnummer[random(0,13)];    
 }
+
+// test
