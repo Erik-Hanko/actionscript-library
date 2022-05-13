@@ -13,4 +13,4 @@ factorial(4); // returner int
 
 random_card(); // returner tilfeldig kort
 
-decimal(number, 1xxx); // returner x decimaltegn
+decimal(number, 1xxx); // returner x decimal
