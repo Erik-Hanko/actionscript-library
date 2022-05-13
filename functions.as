@@ -1,6 +1,6 @@
 function print(x)
 {
-	return trace(x);
+    return trace(x);
 }
 
 function random(lower_value:int, higher_value:int):int
@@ -49,4 +49,9 @@ function random_card()
     var korttype:Array = ["Ruter","Hjerter","Klover","Spar"];
 
     return korttype[random(0,3)] +" "+ kortnummer[random(0,13)];    
+}
+
+function decimal(number:Number, factor:int)
+{
+    return Math.round(number * factor)/factor; // print(decimal(number, 10)) gives 1 decimal
 }
