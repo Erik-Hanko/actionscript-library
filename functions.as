@@ -51,7 +51,7 @@ function random_card()
     return korttype[random(0,3)] +" "+ kortnummer[random(0,13)];    
 }
 
-function decimal(number:Number, factor:int)
+function decimal_(number:Number, factor:int)
 {
     return Math.round(number * factor)/factor; // print(decimal(number, 10)) gives 1 decimal
 }
