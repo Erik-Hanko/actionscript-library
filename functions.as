@@ -43,6 +43,11 @@ function factorial(x:int):int
     return temp;
 }
 
+function decimal(number:Number, factor:int)
+{
+    return Math.round(number * factor)/factor; // print(decimal(number, 10)) gives 1 decimal
+}
+
 function random_card()
 {
     var kortnummer:Array = ["Kong","Dronning","Knekt","Ess","2","3","4","5","6","7","8","9","10"];
@@ -51,7 +56,9 @@ function random_card()
     return korttype[random(0,3)] +" "+ kortnummer[random(0,13)];    
 }
 
-function decimal(number:Number, factor:int)
+function dice_roll()
 {
-    return Math.round(number * factor)/factor; // print(decimal(number, 10)) gives 1 decimal
+	var terning:Array = [1, 2, 3, 4, 5, 6];
+	
+	return terning[random(0, 5)];
 }

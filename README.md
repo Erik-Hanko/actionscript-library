@@ -3,14 +3,16 @@ custom library for actionscript
 
 DOCUMENTATION:
 
-print(tekst) // returner trace
+print(tekst) // return trace
 
-factorize(100); // returner array
+factorize(100); // return array
 
-random(1, 10); // returner int
+random(1, 10); // return int
 
-factorial(4); // returner int
+factorial(4); // return int
 
-random_card(); // returner tilfeldig kort
+decimal(number, 1xxx); // return x decimal
 
-decimal(number, 1xxx); // returner x decimal
+random_card(); // return random card from an array
+
+dice_roll(); // return random dice roll from an array
