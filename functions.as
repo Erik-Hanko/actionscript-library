@@ -62,3 +62,12 @@ function dice_roll()
 	
 	return terning[random(0, 5)];
 }
+
+function even(int:x) {
+    if(x % 2 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
