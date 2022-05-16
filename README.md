@@ -1,6 +1,11 @@
 # actionscript-library
 custom library for actionscript
 
+HOW TO INCLUDE FILE:
+
+include "[file_path]/actionscript-library/functions.as";
+
+
 DOCUMENTATION:
 
 print(tekst) // returns a trace
@@ -16,3 +21,5 @@ decimal(number, 1xxx); // returns x decimal
 random_card(); // returns random card from an array
 
 dice_roll(); // returns random dice roll from an array
+
+even(); // returns boolean
