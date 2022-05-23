@@ -1,12 +1,12 @@
 # actionscript-library
 custom library for actionscript
 
-HOW TO INCLUDE FILE:
+**HOW TO INCLUDE FILE:**__
 
 include "[file_path]/actionscript-library/functions.as";
 
 
-DOCUMENTATION:
+**_DOCUMENTATION:_**
 
 print(tekst) // returns a trace
 
