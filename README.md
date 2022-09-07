@@ -8,11 +8,13 @@ include "[file_path]/actionscript-library/functions.as";
 
 **_DOCUMENTATION:_**
 
-print(string) // returns a trace
+syntax(); // prints out the syntax to the console
 
-factorize(int); // returns an array
+print(string); // returns a trace
 
 random(1, 10); // returns an int
+
+factorize(int); // returns an array
 
 factorial(int); // returns an int
 
