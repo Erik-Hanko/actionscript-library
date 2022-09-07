@@ -8,15 +8,19 @@ include "[file_path]/actionscript-library/functions.as";
 
 **_DOCUMENTATION:_**
 
-print(tekst) // returns a trace
+print(string) // returns a trace
 
-factorize(100); // returns an array
+factorize(number); // returns an array
 
 random(1, 10); // returns an int
 
-factorial(4); // returns an int
+factorial(number); // returns an int
 
-decimal(number, 1xxx); // returns x decimal
+squared(number); // returns a number
+
+cubed(number); // returns a number
+
+decimal(number, 100); // returns amount of 0's in decimals (the example would return 2 decimal places)
 
 random_card(); // returns random card from an array
 

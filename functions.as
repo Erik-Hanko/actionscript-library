@@ -43,6 +43,16 @@ function factorial(x:int):int
     return temp;
 }
 
+function squared(number:Number):Number
+{
+    return number * number;
+}
+
+function cubed(number:Number):Number
+{
+    return number * number * number;
+}
+
 function decimal(number:Number, factor:int)
 {
     return Math.round(number * factor)/factor; // print(decimal(number, 10)) gives 1 decimal
