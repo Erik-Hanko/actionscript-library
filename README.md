@@ -10,11 +10,11 @@ include "[file_path]/actionscript-library/functions.as";
 
 print(string) // returns a trace
 
-factorize(number); // returns an array
+factorize(int); // returns an array
 
 random(1, 10); // returns an int
 
-factorial(number); // returns an int
+factorial(int); // returns an int
 
 squared(number); // returns a number
 
