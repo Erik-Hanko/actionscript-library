@@ -8,7 +8,7 @@ function syntax()
     trace("factorial(int); // returns an int");
     trace("squared(number); // returns a number");
     trace("cubed(number); // returns a number");
-    trace("decimal(number, 100); // returns amount of 0's in decimals (the example would return 2 decimal places)");
+    trace("decimal(number, 100); // returns x amount of decimal places");
     trace("random_card(); // returns random card from an array");
     trace("dice_roll(); // returns random dice roll from an array");
     trace("even(); // returns boolean");
@@ -88,7 +88,7 @@ function cubed(number:Number):Number
 
 function decimal(number:Number, factor:int)
 {
-    return Math.round(number * factor)/factor; // print(decimal(number, 10)) gives 1 decimal
+    return Math.round(number * Math.pow(10, factor))/Math.pow(10, factor);
 }
 
 function random_card()

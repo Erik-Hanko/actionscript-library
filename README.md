@@ -22,7 +22,7 @@ squared(number); // returns a number
 
 cubed(number); // returns a number
 
-decimal(number, 100); // returns amount of 0's in decimals (the example would return 2 decimal places)
+decimal(number, x); // returns x amount of decimal places
 
 random_card(); // returns random card from an array
 
