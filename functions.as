@@ -86,9 +86,9 @@ function cubed(number:Number):Number
     return number * number * number;
 }
 
-function decimal(number:Number, factor:int)
+function decimal(number:Number, decimal_places:int)
 {
-    return Math.round(number * Math.pow(10, factor))/Math.pow(10, factor);
+    return Math.round(number * Math.pow(10, decimal_places))/Math.pow(10, decimal_places);
 }
 
 function random_card()
