@@ -38,7 +38,7 @@ function print(x)
 
 function random(lower_value:int, higher_value:int):int
 {
-	return (int(Math.random()*((higher_value-lower_value) + 1)+lower_value));
+    return (int(Math.random()*((higher_value-lower_value) + 1)+lower_value));
 }
 
 function factorize(number:int)
