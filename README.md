@@ -14,6 +14,8 @@ print(string); // returns a trace
 
 random(1, 10); // returns an int
 
+remove_whitespace(string); // returns a string without any whitespaces before/after
+
 factorize(int); // returns an array
 
 factorial(int); // returns an int

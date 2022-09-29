@@ -4,6 +4,7 @@ function syntax()
     trace("syntax(); // prints out the syntax to the console");
     trace("print(string) // returns a trace");
     trace("random(1, 10); // returns an int");
+    trace("remove_whitespace(string); // returns a string without any whitespaces before/after");
     trace("factorize(int); // returns an array");
     trace("factorial(int); // returns an int");
     trace("squared(number); // returns a number");
@@ -39,6 +40,12 @@ function print(x)
 function random(lower_value:int, higher_value:int):int
 {
     return (int(Math.random()*((higher_value-lower_value) + 1)+lower_value));
+}
+
+function remove_whitespace(string:String):String
+{
+    var trim:RegExp = /^\s+|\s+$/g; // removes spaces, tabs, returns and line breaks from the start/end of a string
+	return string.replace(trim, "");
 }
 
 function factorize(number:int)
