@@ -5,6 +5,8 @@ function syntax()
     trace("print(string) // returns a trace");
     trace("random(1, 10); // returns an int");
     trace("remove_whitespace(string); // returns a string without any whitespaces before/after");
+    trace("remove_spaces(string); // returns a string without any spaces inbetween");
+    trace("remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space");
     trace("factorize(int); // returns an array");
     trace("factorial(int); // returns an int");
     trace("squared(number); // returns a number");
@@ -42,10 +44,22 @@ function random(lower_value:int, higher_value:int):int
     return (int(Math.random()*((higher_value-lower_value) + 1)+lower_value));
 }
 
-function remove_whitespace(string:String):String
+function remove_whitespace(string:String):String // removes spaces, tabs, returns and line breaks from the start/end of a string
 {
-    var trim:RegExp = /^\s+|\s+$/g; // removes spaces, tabs, returns and line breaks from the start/end of a string
+    var trim:RegExp = /^\s+|\s+$/g; // checks for spaces, tabs, returns and line breaks
 	return string.replace(trim, "");
+}
+
+function remove_spaces(string:String):String // replaces multiple spaces with a single space
+{
+    var space:RegExp = /\s/g; // checks for all spaces
+    return string.replace(space, "");
+}
+
+function remove_extra_spaces(string:String):String // replaces multiple spaces with a single space
+{
+    var multiple_spaces:RegExp = /\s{2,}/g; // checks for all spaces thats bigger than 1 space
+    return string.replace(multiple_spaces, " ");
 }
 
 function factorize(number:int)

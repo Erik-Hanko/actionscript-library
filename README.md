@@ -16,6 +16,10 @@ random(1, 10); // returns an int
 
 remove_whitespace(string); // returns a string without any whitespaces before/after
 
+remove_spaces(string); // returns a string without any spaces inbetween
+
+remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space
+
 factorize(int); // returns an array
 
 factorial(int); // returns an int
