@@ -15,6 +15,9 @@ function syntax()
     trace("random_card(); // returns random card from an array");
     trace("dice_roll(); // returns random dice roll from an array");
     trace("even(); // returns boolean");
+    trace("interval_check(); // returns boolean based on if number is within start/end values");
+    trace("radian_to_degree(); // returns number");
+    trace("degree_to_radian(); // returns number");
     
     
     /*
@@ -107,7 +110,7 @@ function cubed(number:Number):Number
     return number * number * number;
 }
 
-function decimal(number:Number, decimal_places:int)
+function decimal(number:Number, decimal_places:int):Number
 {
     return Math.round(number * Math.pow(10, decimal_places))/Math.pow(10, decimal_places);
 }
@@ -127,11 +130,35 @@ function dice_roll()
 	return terning[random(0, 5)];
 }
 
-function even(x:int) {
+function even(x:int):Boolean
+{
     if(x % 2 == 0) {
         return true;
     }
     else {
         return false;
     }
+}
+
+function interval_check(number:Number, interval_start:Number, interval_end:Number):Boolean // returns boolean based on if number is within start/end values
+{
+	if (number >= interval_start && number <= interval_end)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function radian_to_degree(radian:Number):Number // returns number
+{
+	var total_radian:Number = radian * (180 / Math.PI);
+	return total_radian % 360;
+}
+
+function degree_to_radian(degree:Number):Number // returns number
+{
+	return degree * (Math.PI / 180);
 }

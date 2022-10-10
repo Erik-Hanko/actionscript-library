@@ -35,3 +35,9 @@ random_card(); // returns random card from an array
 dice_roll(); // returns random dice roll from an array
 
 even(); // returns boolean
+
+interval_check(); // returns boolean based on if number is within start/end values
+
+radian_to_degree(); // returns number
+
+degree_to_radian(); // returns number
