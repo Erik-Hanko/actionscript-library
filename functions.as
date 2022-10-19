@@ -14,10 +14,11 @@ function syntax()
     trace("decimal(number, 100); // returns x amount of decimal places");
     trace("random_card(); // returns random card from an array");
     trace("dice_roll(); // returns random dice roll from an array");
-    trace("even(); // returns boolean");
+    trace("even(); // returns a boolean");
     trace("interval_check(); // returns boolean based on if number is within start/end values");
-    trace("radian_to_degree(); // returns number");
-    trace("degree_to_radian(); // returns number");
+    trace("radian_to_degree(); // returns a number");
+    trace("degree_to_radian(); // returns a number");
+    trace("array_sum(array); // returns a number");
     
     
     /*
@@ -161,4 +162,19 @@ function radian_to_degree(radian:Number):Number // returns number
 function degree_to_radian(degree:Number):Number // returns number
 {
 	return degree * (Math.PI / 180);
+}
+
+function array_sum(tab:Array):Number // returns number
+{
+	var total:Number = 0;
+	if (tab.length == 0)
+		return 0;
+	else
+	{
+		for (var i:int = 0; i < tab.length; i++)
+		{
+			total += tab[i];
+		}
+		return total;
+	}
 }
