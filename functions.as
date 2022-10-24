@@ -198,13 +198,18 @@ function array_avg(tab:Array):Number // returns a number
 
 function array_max(tab:Array):Number // returns a number
 {
-    var max_num = tab[0];
-    for(var i:uint = 1; i < tab.length; i++)
+    if(tab.length == 0)
+        return 0
+    else
     {
-        if(max_num < tab[i])
+        var max_num = tab[0];
+        for(var i:uint = 1; i < tab.length; i++)
         {
-			max_num = tab[i];
+            if(max_num < tab[i])
+            {
+                max_num = tab[i];
+            }
         }
+        return max_num;
     }
-    return max_num;
 }
