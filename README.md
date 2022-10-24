@@ -43,3 +43,7 @@ radian_to_degree(number); // returns a number
 degree_to_radian(number); // returns a number
 
 array_sum(array); // returns a number
+
+array_avg(array); // returns a number
+
+array_max(array); // returns a number

@@ -19,6 +19,8 @@ function syntax()
     trace("radian_to_degree(); // returns a number");
     trace("degree_to_radian(); // returns a number");
     trace("array_sum(array); // returns a number");
+    trace("array_avg(array); // returns a number");
+    trace("array_max(array); // returns a number");
     
     
     /*
@@ -141,7 +143,7 @@ function even(x:int):Boolean
     }
 }
 
-function interval_check(number:Number, interval_start:Number, interval_end:Number):Boolean // returns boolean based on if number is within start/end values
+function interval_check(number:Number, interval_start:Number, interval_end:Number):Boolean // returns a boolean based on if number is within start/end values
 {
 	if (number >= interval_start && number <= interval_end)
 	{
@@ -153,18 +155,18 @@ function interval_check(number:Number, interval_start:Number, interval_end:Numbe
 	}
 }
 
-function radian_to_degree(radian:Number):Number // returns number
+function radian_to_degree(radian:Number):Number // returns a number
 {
 	var total_radian:Number = radian * (180 / Math.PI);
 	return total_radian % 360;
 }
 
-function degree_to_radian(degree:Number):Number // returns number
+function degree_to_radian(degree:Number):Number // returns a number
 {
 	return degree * (Math.PI / 180);
 }
 
-function array_sum(tab:Array):Number // returns number
+function array_sum(tab:Array):Number // returns a number
 {
 	var total:Number = 0;
 	if (tab.length == 0)
@@ -177,4 +179,32 @@ function array_sum(tab:Array):Number // returns number
 		}
 		return total;
 	}
+}
+
+function array_avg(tab:Array):Number // returns a number
+{
+    var total:Number = 0;
+    if(tab.length == 0)
+        return 0
+    else
+    {
+        for(var i:int = 0; i < tab.length; i++)
+        {
+            total += tab[i];
+        }
+        return decimal((total/tab.length), 2);
+    }
+}
+
+function array_max(tab:Array):Number // returns a number
+{
+    var max_num = tab[0];
+    for(var i:uint = 1; i < tab.length; i++)
+    {
+        if(max_num < tab[i])
+        {
+			max_num = tab[i];
+        }
+    }
+    return max_num;
 }
