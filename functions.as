@@ -21,6 +21,7 @@ function syntax()
     trace("array_sum(array); // returns a number");
     trace("array_avg(array); // returns a number");
     trace("array_max(array); // returns a number");
+    trace("random_number_picker(start_num, end_num, amount); // returns an array with random numbers based on argument inputs");
     
     
     /*
@@ -212,4 +213,24 @@ function array_max(tab:Array):Number // returns a number
         }
         return max_num;
     }
+}
+
+function random_number_picker(start_num:int = 0, end_num:int = 1, amount:int = 1) // returns an array with random numbers based on argument inputs
+{
+	var array:Array = new Array();
+	var random_array:Array = new Array();
+
+	for (var i:int = start_num; i <= end_num; i++)
+	{
+		array.push(i);
+	}
+
+	for (var j:int = 0; j < amount; j++)
+	{
+		var random_number:int = random(0, array.length-1);
+		random_array.push(array[random_number]);
+		array.removeAt(random_number);
+	}
+
+	return random_array;
 }

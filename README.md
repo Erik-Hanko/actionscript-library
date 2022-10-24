@@ -47,3 +47,5 @@ array_sum(array); // returns a number
 array_avg(array); // returns a number
 
 array_max(array); // returns a number
+
+random_number_picker(start_num, end_num, amount); // returns an array with random numbers based on argument inputs
