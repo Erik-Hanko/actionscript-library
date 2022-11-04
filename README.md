@@ -20,7 +20,7 @@ remove_spaces(string); // returns a string without any spaces inbetween
 
 remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space
 
-factorize(int); // returns an array
+prime_factorize(int) // returns an array of every prime factor in number inputted
 
 factorial(int); // returns an int
 
@@ -49,3 +49,17 @@ array_avg(array); // returns a number
 array_max(array); // returns a number
 
 random_number_picker(start_num, end_num, amount); // returns an array with random numbers based on argument inputs
+
+password_gen(password_length); // returns a string different characters with a length of user parameter input"
+
+twofactor(length); // returns a string of just numbers with a length of user parameter input
+
+encrypt(word:String,key:int); // encrypts user input word with the key
+
+decrypt(word:String,key:int); // decrypts user input word with the key, if key is not the same as encrypted key, output will be weird
+
+scramble_name(array); // returns an array with a scrambled name
+
+delayed_call(function, ms) // delays a function call by x ms
+
+eval(string) // returns a calculated math problem from a string to a number

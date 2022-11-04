@@ -7,11 +7,11 @@ function syntax()
     trace("remove_whitespace(string); // returns a string without any whitespaces before/after");
     trace("remove_spaces(string); // returns a string without any spaces inbetween");
     trace("remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space");
-    trace("factorize(int); // returns an array");
+    trace("prime_factorize(int) // returns an array of every prime factor in number inputted");
     trace("factorial(int); // returns an int");
     trace("squared(number); // returns a number");
     trace("cubed(number); // returns a number");
-    trace("decimal(number, 100); // returns x amount of decimal places");
+    trace("decimal(number, 2); // returns x amount of decimal places");
     trace("random_card(); // returns random card from an array");
     trace("dice_roll(); // returns random dice roll from an array");
     trace("even(); // returns a boolean");
@@ -22,9 +22,15 @@ function syntax()
     trace("array_avg(array); // returns a number");
     trace("array_max(array); // returns a number");
     trace("random_number_picker(start_num, end_num, amount); // returns an array with random numbers based on argument inputs");
-    
-    
-    /*
+    trace("password_gen(password_length); // returns a string different characters with a length of user parameter input");
+    trace("twofactor(length); // returns a string of just numbers with a length of user parameter input");
+    trace("encrypt(word:String,key:int); // encrypts user input word with the key");
+	trace("decrypt(word:String,key:int); // decrypts user input word with the key, if key is not the same as encrypted key, output will be weird");
+    trace("scramble_name(array); // returns an array with a scrambled name");
+    trace("delayed_call(function, ms) // delays a function call by x ms");
+    trace("eval(string) // returns a calculated math problem from a string to a number");
+
+	/*
     var documentation:String = "**_DOCUMENTATION:_** \n";
     var doc_print:String = "print(string) // returns a trace \n";
     var doc_random:String = "random(1, 10); // returns an int \n";
@@ -69,26 +75,19 @@ function remove_extra_spaces(string:String):String // replaces multiple spaces w
     return string.replace(multiple_spaces, " ");
 }
 
-function factorize(number:int)
+function prime_factorize(number:int):Array
 {
-    var tall:int = number;
-    var i:int;
-    var primtallut:Array = [];
-
-    for(i = 2; i <= tall;i++)
-    {
-        while(tall % i == 0)
-        {
-            primtallut.push(i);
-            tall /= i;
-        }
-    }
-    if(tall > 1)
-    {
-        primtallut.push(tall);
-    }
-
-    return primtallut;
+	var factors_array:Array = new Array;
+	var number:int = number;
+	for(var i:int = 2; i <= number; i++)
+	{
+		while(number%i == 0)
+		{
+			factors_array.push(i);
+			number /= i;
+		}
+	}
+    return factors_array;
 }
 
 function factorial(x:int):int
@@ -233,4 +232,107 @@ function random_number_picker(start_num:int = 0, end_num:int = 1, amount:int = 1
 	}
 
 	return random_array;
+}
+function password_gen(length_pass:int):String
+{
+	var symbol_array:Array = new Array(0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","-",".","?","!","#","@","&",",");
+	var pass_array:Array = new Array();
+	for(var i:int = 0; i < length_pass; i++)
+	{
+		pass_array.push(symbol_array[random(0,symbol_array.length-1)]);
+	}
+    return String(pass_array.join(""));
+}
+
+function twofactor(length_pass:int):String
+{
+	var symbol_array:Array = new Array(1,2,3,4,5,6,7,8,9)
+	var pass_array:Array = new Array();
+	for(var i:int = 0; i < length_pass; i++)
+	{
+		pass_array.push(symbol_array[random(0,symbol_array.length-1)]);
+	}
+    return String(pass_array.join(""));
+}
+
+function encrypt(e_word:String,e_key:int)
+{
+	// var word_array:Array = word.split("");
+	var encrypted_array:Array = new Array();
+	for(var i:int = 0; i < e_word.length; i++)
+	{
+		encrypted_array.push(String.fromCharCode(e_word.charCodeAt(i)+e_key));
+	}
+    return encrypted_array.join("");
+}
+
+function decrypt(d_word:String,d_key:int)
+{
+	var decrypted_array:Array = new Array();
+	for(var i:int = 0; i < d_word.length; i++)
+	{
+		decrypted_array.push(String.fromCharCode(d_word.charCodeAt(i)-d_key));
+	}
+    return decrypted_array.join("");
+}
+
+
+function scramble_name(array:Array = null) // returns an array with a scrambled name
+{
+	if (array == null)
+		return "no array as parameter";
+	
+	var fixed_name:String = array[random(0, array.length-1)];
+	fixed_name = fixed_name.toLowerCase();
+	var name_array:Array = fixed_name.split("");
+	
+	var scrambled_name:Array = new Array();
+	
+	for (var i:int = 0; i < fixed_name.length; i++)
+	{
+		var random_number:int = random(0, name_array.length-1);
+		scrambled_name.push(name_array[random_number]);
+		name_array.removeAt(random_number);
+	}
+
+	scrambled_name[0] = scrambled_name[0].toUpperCase();
+	
+	return scrambled_name;
+}
+
+function delayed_call(fn:Function = null, ms:int = 0) // delays a function call by x ms
+{
+	if (fn == null)
+		return;
+	
+	var timer:Timer = new Timer(ms, 1);
+	timer.addEventListener(TimerEvent.TIMER_COMPLETE, load);
+	timer.start();
+	
+	function load(e:TimerEvent)
+	{
+		fn();
+	}
+}
+
+function eval(str:String) // returns a calculated math problem from a string to a number
+{
+	var operators = "+-*/"; 
+	for (var i = 0; i < 4; i++)
+	{
+		var op = operators.charAt(i);
+		var pos = str.indexOf(op);
+		if (pos > 0 && operators.indexOf(str.charAt(pos - 1)) == -1)
+		{
+		  var left = eval(str.substr(0, pos));
+		  var right = eval(str.substr(pos + 1));
+		  switch (op) {
+			case "/": return left / right;
+			case "*": return left * right;
+			case "-": return left - right;
+			case "+": return left + right;
+			}
+		}
+	}
+    return Number(str);
 }
