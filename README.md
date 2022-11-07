@@ -65,3 +65,5 @@ scramble_name(array); // returns an array with a scrambled name
 delayed_call(function, ms) // delays a function call by x ms
 
 eval(string) // returns a calculated math problem from a string to a number
+
+clock() // returns the current time h:m:s

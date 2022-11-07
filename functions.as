@@ -30,6 +30,7 @@ function syntax()
     trace("scramble_name(array); // returns an array with a scrambled name");
     trace("delayed_call(function, ms) // delays a function call by x ms");
     trace("eval(string) // returns a calculated math problem from a string to a number");
+    trace("clock() // returns the current time h:m:s");
 
 	/*
     var documentation:String = "**_DOCUMENTATION:_** \n";
@@ -341,4 +342,18 @@ function eval(str:String) // returns a calculated math problem from a string to 
 		}
 	}
     return Number(str);
+}
+
+function clock() // returns the current time h:m:s
+{	
+	var date:Date = new Date();
+	var h = date.getHours();
+	var m = date.getMinutes();
+	var s = date.getSeconds();
+	
+	h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+	
+	return h + ":" + m + ":" + s;
 }
