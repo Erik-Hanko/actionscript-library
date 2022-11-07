@@ -16,8 +16,9 @@ function syntax()
     trace("dice_roll(); // returns random dice roll from an array");
     trace("even(); // returns a boolean");
     trace("interval_check(); // returns boolean based on if number is within start/end values");
-    trace("radian_to_degree(); // returns a number");
-    trace("degree_to_radian(); // returns a number");
+    trace("radian_to_degree(number); // returns a number");
+    trace("degree_to_radian(number); // returns a number");
+    trace("inch_to_cm(number) // returns a number");
     trace("array_sum(array); // returns a number");
     trace("array_avg(array); // returns a number");
     trace("array_max(array); // returns a number");
@@ -158,12 +159,17 @@ function interval_check(number:Number, interval_start:Number, interval_end:Numbe
 function radian_to_degree(radian:Number):Number // returns a number
 {
 	var total_radian:Number = radian * (180 / Math.PI);
-	return total_radian % 360;
+	return decimal((total_radian % 360), 2);
 }
 
 function degree_to_radian(degree:Number):Number // returns a number
 {
-	return degree * (Math.PI / 180);
+	return decimal((degree * (Math.PI / 180)), 2);
+}
+
+function inch_to_cm(inch:Number):Number // returns a number
+{
+    return decimal((inch / 0.39370), 2);
 }
 
 function array_sum(tab:Array):Number // returns a number
