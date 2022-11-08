@@ -7,7 +7,7 @@ function syntax()
     trace("remove_whitespace(string); // returns a string without any whitespaces before/after");
     trace("remove_spaces(string); // returns a string without any spaces inbetween");
     trace("remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space");
-    trace("prime_factorize(int) // returns an array of every prime factor in number inputted");
+    trace("prime_factorize(int); // returns an array of every prime factor in number inputted");
     trace("factorial(int); // returns an int");
     trace("squared(number); // returns a number");
     trace("cubed(number); // returns a number");
@@ -28,10 +28,11 @@ function syntax()
     trace("encrypt(word:String,key:int); // encrypts user input word with the key");
 	trace("decrypt(word:String,key:int); // decrypts user input word with the key, if key is not the same as encrypted key, output will be weird");
     trace("scramble_name(array); // returns an array with a scrambled name");
-    trace("delayed_call(function, ms) // delays a function call by x ms");
-    trace("eval(string) // returns a calculated math problem from a string to a number");
-    trace("clock() // returns the current time h:m:s");
-    trace("date_and_time() // returns the current date and time");
+    trace("delayed_call(function, ms); // delays a function call by x ms");
+    trace("eval(string); // returns a calculated math problem from a string to a number");
+    trace("clock(); // returns the current time h:m:s");
+    trace("date_and_time(); // returns the current date and time");
+	trace("remove_child(child); // proper remove child");
 
 	/*
     var documentation:String = "**_DOCUMENTATION:_** \n";
@@ -395,4 +396,13 @@ function watermark()
 	}
 
 	loop();
+}
+
+function remove_child(child:Object) // proper remove child
+{
+	if (child != null)
+    {
+        removeChild(child);
+        child = null;
+    }
 }

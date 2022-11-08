@@ -20,7 +20,7 @@ remove_spaces(string); // returns a string without any spaces inbetween
 
 remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space
 
-prime_factorize(int) // returns an array of every prime factor in number inputted
+prime_factorize(int); // returns an array of every prime factor in number inputted
 
 factorial(int); // returns an int
 
@@ -62,10 +62,12 @@ decrypt(word:String,key:int); // decrypts user input word with the key, if key i
 
 scramble_name(array); // returns an array with a scrambled name
 
-delayed_call(function, ms) // delays a function call by x ms
+delayed_call(function, ms); // delays a function call by x ms
 
-eval(string) // returns a calculated math problem from a string to a number
+eval(string); // returns a calculated math problem from a string to a number
 
-clock() // returns the current time h:m:s
+clock(); // returns the current time h:m:s
 
-date_and_time() // returns the current date and time
+date_and_time(); // returns the current date and time
+
+remove_child(child); // proper remove child
