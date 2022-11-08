@@ -31,6 +31,7 @@ function syntax()
     trace("delayed_call(function, ms) // delays a function call by x ms");
     trace("eval(string) // returns a calculated math problem from a string to a number");
     trace("clock() // returns the current time h:m:s");
+    trace("date_and_time() // returns the current date and time");
 
 	/*
     var documentation:String = "**_DOCUMENTATION:_** \n";
@@ -356,4 +357,42 @@ function clock() // returns the current time h:m:s
     s = (s < 10) ? "0" + s : s;
 	
 	return h + ":" + m + ":" + s;
+}
+
+function date_and_time() // returns the current date and time
+{	
+	var df:DateTimeFormatter = new DateTimeFormatter("");
+	df.setDateTimePattern("dd.MM | HH:mm")
+	
+	return df.format(new Date());
+}
+
+function watermark()
+{
+	var rectangle:Shape = new Shape;
+	rectangle.graphics.beginFill(0x010101);
+	rectangle.graphics.drawRect(10, 10, 127,20); // (x spacing, y spacing, width, height)
+	rectangle.graphics.endFill(); // not always needed but I like to put it in to end the fill
+	addChild(rectangle); 
+
+	var textfield:TextField = new TextField();
+	textfield.defaultTextFormat = new TextFormat("Times New Roman", 15);
+	textfield.width = 300;
+	textfield.height = 200;
+	textfield.x = 15;
+	textfield.y = 9;
+	textfield.type = "dynamic";
+	textfield.multiline = false;
+	textfield.border = false;
+	textfield.textColor = 0xfcfcfc;
+	addChild(textfield);
+
+
+	function loop()
+	{
+		textfield.text = "Erik | " + date_and_time();
+		delayed_call(loop, 1000);
+	}
+
+	loop();
 }

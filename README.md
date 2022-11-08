@@ -67,3 +67,5 @@ delayed_call(function, ms) // delays a function call by x ms
 eval(string) // returns a calculated math problem from a string to a number
 
 clock() // returns the current time h:m:s
+
+date_and_time() // returns the current date and time
