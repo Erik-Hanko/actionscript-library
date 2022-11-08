@@ -398,11 +398,13 @@ function watermark()
 	loop();
 }
 
-function remove_child(child:DisplayObject):void // proper remove child
+function remove_child(child:DisplayObject) // proper remove child
 {
 	if (child != null)
     {
         removeChild(child);
         child = null;
     }
+
+	return child;
 }
