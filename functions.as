@@ -404,7 +404,11 @@ function remove_child(child:DisplayObject) // proper remove child
     {
         removeChild(child);
         child = null;
-    }
 
-	return child;
+		return child;
+    }
+	else
+	{
+		return child;
+	}
 }
