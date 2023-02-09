@@ -7,6 +7,7 @@ function syntax()
     trace("remove_whitespace(string); // returns a string without any whitespaces before/after");
     trace("remove_spaces(string); // returns a string without any spaces inbetween");
     trace("remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space");
+	trace("trim(string); // returns a string without spaces before and after");
     trace("prime_factorize(int); // returns an array of every prime factor in number inputted");
     trace("factorial(int); // returns an int");
     trace("squared(number); // returns a number");
@@ -67,7 +68,7 @@ function remove_whitespace(string:String):String // removes spaces, tabs, return
 	return string.replace(trim, "");
 }
 
-function remove_spaces(string:String):String // replaces multiple spaces with a single space
+function remove_spaces(string:String):String // removes all spaces
 {
     var space:RegExp = /\s/g; // checks for all spaces
     return string.replace(space, "");
@@ -77,6 +78,12 @@ function remove_extra_spaces(string:String):String // replaces multiple spaces w
 {
     var multiple_spaces:RegExp = /\s{2,}/g; // checks for all spaces thats bigger than 1 space
     return string.replace(multiple_spaces, " ");
+}
+
+function trim(string:String):String // removes spaces before and after the string
+{
+    var space:RegExp = /^\s*|\s*$/gim; // checks for all spaces
+    return string.replace(space, "");
 }
 
 function prime_factorize(number:int):Array
@@ -374,7 +381,7 @@ function watermark()
 	rectangle.graphics.beginFill(0x010101);
 	rectangle.graphics.drawRect(10, 10, 127,20); // (x spacing, y spacing, width, height)
 	rectangle.graphics.endFill(); // not always needed but I like to put it in to end the fill
-	addChild(rectangle); 
+	addChild(rectangle);
 
 	var textfield:TextField = new TextField();
 	textfield.defaultTextFormat = new TextFormat("Times New Roman", 15);

@@ -20,6 +20,8 @@ remove_spaces(string); // returns a string without any spaces inbetween
 
 remove_extra_spaces(string); // returns a string that replaces multiple spaces with a single space
 
+trim(string); // returns a string without spaces before and after
+
 prime_factorize(int); // returns an array of every prime factor in number inputted
 
 factorial(int); // returns an int
